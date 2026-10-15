@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7fb">
+  <meta name="description" content="Rayyan's business analytics dashboard.">
+  <title>Rayyan — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#overview"><span class="brand-mark">R</span><span>rayyan<span class="brand-dot">.</span></span></a>
+      <p class="nav-label">WORKSPACE</p>
+      <nav class="navigation" aria-label="Main navigation">
+        <a class="nav-link active" href="#overview"><span class="nav-icon">▦</span>Overview</a>
+        <a class="nav-link" href="#analytics"><span class="nav-icon">⌁</span>Analytics</a>
+        <a class="nav-link" href="#orders"><span class="nav-icon">▤</span>Orders<span class="nav-badge">8</span></a>
+        <a class="nav-link" href="#customers"><span class="nav-icon">♧</span>Customers</a>
+      </nav>
+      <p class="nav-label secondary-label">PREFERENCES</p>
+      <nav class="navigation" aria-label="Preferences">
+        <a class="nav-link" href="#settings"><span class="nav-icon">⚙</span>Settings</a>
+        <a class="nav-link" href="#help"><span class="nav-icon">?</span>Help center</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="upgrade-card">
+          <div class="upgrade-spark">✦</div><strong>More room to grow?</strong>
+          <p>Explore tools to help you understand your business.</p><a href="#analytics">Explore insights <span>↗</span></a>
+        </div>
+        <div class="user-profile"><div class="avatar avatar-owner">R</div><div><strong>Rayyan</strong><small>Admin account</small></div><span class="profile-dots">···</span></div>
+      </div>
+    </aside>
+
+    <main class="main" id="overview">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+        <div class="breadcrumbs"><span>Pages</span><span>/</span><strong>Overview</strong></div>
+        <div class="topbar-tools">
+          <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search orders..." aria-label="Search orders"><kbd>⌘ K</kbd></label>
+          <button class="icon-button notification-button" id="notificationButton" type="button" aria-label="Notifications" aria-expanded="false">♧<i></i></button>
+          <div class="avatar avatar-owner top-avatar">R</div>
+          <div class="notification-popover" id="notificationPopover" hidden><strong>All caught up</strong><p>New updates and alerts will appear here.</p></div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="welcome">
+          <div><p class="date-line" id="todayDate"></p><h1>Good morning, Rayyan <span>✦</span></h1><p>Here’s what’s happening with your business today.</p></div>
+          <button class="button button-primary" id="downloadButton" type="button"><span aria-hidden="true">⇩</span> Download report</button>
+        </section>
+        <section class="metrics" aria-label="Business metrics">
+          <article class="metric-card"><div class="metric-heading"><span>Total revenue</span><span class="metric-icon mint">₹</span></div><strong class="metric-number" data-metric="revenue">₹2,46,800</strong><div class="metric-foot"><b class="positive">↗ 12.8%</b><span>vs. previous period</span></div><div class="sparkline mint-line" aria-hidden="true"><i style="--height:35%"></i><i style="--height:55%"></i><i style="--height:42%"></i><i style="--height:68%"></i><i style="--height:53%"></i><i style="--height:82%"></i><i style="--height:64%"></i><i style="--height:100%"></i></div></article>
+          <article class="metric-card"><div class="metric-heading"><span>Total orders</span><span class="metric-icon lilac">▤</span></div><strong class="metric-number" data-metric="orders">1,482</strong><div class="metric-foot"><b class="positive">↗ 8.2%</b><span>vs. previous period</span></div><div class="sparkline lilac-line" aria-hidden="true"><i style="--height:48%"></i><i style="--height:36%"></i><i style="--height:66%"></i><i style="--height:52%"></i><i style="--height:75%"></i><i style="--height:58%"></i><i style="--height:85%"></i><i style="--height:100%"></i></div></article>
+          <article class="metric-card"><div class="metric-heading"><span>New customers</span><span class="metric-icon peach">♧</span></div><strong class="metric-number" data-metric="customers">486</strong><div class="metric-foot"><b class="positive">↗ 16.4%</b><span>vs. previous period</span></div><div class="sparkline peach-line" aria-hidden="true"><i style="--height:32%"></i><i style="--height:48%"></i><i style="--height:42%"></i><i style="--height:65%"></i><i style="--height:55%"></i><i style="--height:76%"></i><i style="--height:67%"></i><i style="--height:100%"></i></div></article>
+          <article class="metric-card"><div class="metric-heading"><span>Conversion rate</span><span class="metric-icon blue">↗</span></div><strong class="metric-number" data-metric="conversion">3.24%</strong><div class="metric-foot"><b class="negative">↘ 0.4%</b><span>vs. previous period</span></div><div class="sparkline blue-line" aria-hidden="true"><i style="--height:74%"></i><i style="--height:82%"></i><i style="--height:60%"></i><i style="--height:91%"></i><i style="--height:68%"></i><i style="--height:100%"></i><i style="--height:77%"></i><i style="--height:72%"></i></div></article>
+        </section>
+
+        <section class="analytics-grid" id="analytics">
+          <article class="panel sales-panel">
+            <div class="panel-heading"><div><h2>Sales overview</h2><p>Revenue and orders over time</p></div><label class="period-select"><span class="sr-only">Select report period</span><select id="periodSelect"><option value="week">This week</option><option value="month" selected>This month</option><option value="year">This year</option></select></label></div>
+            <div class="chart-legend"><span><i class="legend-revenue"></i>Revenue</span><span><i class="legend-orders"></i>Orders</span></div>
+            <div class="chart-container"><canvas id="salesChart" role="img" aria-label="Chart comparing revenue and orders"></canvas></div>
+          </article>
+          <article class="panel traffic-panel">
+            <div class="panel-heading"><div><h2>Traffic sources</h2><p>Where your visitors come from</p></div><button class="subtle-button" type="button" aria-label="More traffic options">···</button></div>
+            <div class="donut-wrap"><div class="donut"><div><strong>24.8k</strong><small>Visitors</small></div></div></div>
+            <div class="traffic-list">
+              <div><span><i class="traffic-purple"></i>Direct</span><b>42%</b></div><div><span><i class="traffic-green"></i>Social media</span><b>28%</b></div>
+              <div><span><i class="traffic-orange"></i>Search engine</span><b>20%</b></div><div><span><i class="traffic-grey"></i>Referral</span><b>10%</b></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel orders-panel" id="orders">
+          <div class="panel-heading orders-heading"><div><h2>Recent orders</h2><p>A quick look at your latest sales</p></div><a class="view-all" href="#orders">View all <span>→</span></a></div>
+          <div class="table-scroll"><table>
+            <thead><tr><th>Customer</th><th>Order ID</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody id="orderRows">
+              <tr data-search="olivia martin olivia@email.com ryn 1048 completed"><td><div class="customer-cell"><span class="avatar customer-pink">OM</span><span><strong>Olivia Martin</strong><small>olivia@email.com</small></span></div></td><td>#RYN-1048</td><td>Oct 15, 2026</td><td class="amount">₹24,800</td><td><span class="status completed">Completed</span></td></tr>
+              <tr data-search="james cooper james@email.com ryn 1047 pending"><td><div class="customer-cell"><span class="avatar customer-blue">JC</span><span><strong>James Cooper</strong><small>james@email.com</small></span></div></td><td>#RYN-1047</td><td>Oct 14, 2026</td><td class="amount">₹12,950</td><td><span class="status pending">Pending</span></td></tr>
+              <tr data-search="sophia chen sophia@email.com ryn 1046 completed"><td><div class="customer-cell"><span class="avatar customer-yellow">SC</span><span><strong>Sophia Chen</strong><small>sophia@email.com</small></span></div></td><td>#RYN-1046</td><td>Oct 14, 2026</td><td class="amount">₹38,200</td><td><span class="status completed">Completed</span></td></tr>
+              <tr data-search="ethan williams ethan@email.com ryn 1045 cancelled"><td><div class="customer-cell"><span class="avatar customer-green">EW</span><span><strong>Ethan Williams</strong><small>ethan@email.com</small></span></div></td><td>#RYN-1045</td><td>Oct 13, 2026</td><td class="amount">₹7,600</td><td><span class="status cancelled">Cancelled</span></td></tr>
+              <tr data-search="ava patel ava@email.com ryn 1044 completed"><td><div class="customer-cell"><span class="avatar customer-lilac">AP</span><span><strong>Ava Patel</strong><small>ava@email.com</small></span></div></td><td>#RYN-1044</td><td>Oct 12, 2026</td><td class="amount">₹21,400</td><td><span class="status completed">Completed</span></td></tr>
+            </tbody>
+          </table><p class="empty-state" id="emptyState" hidden>No orders match your search.</p></div>
+        </section>
+        <footer class="footer">© <span id="currentYear"></span> Rayyan. All rights reserved.</footer>
+      </div>
+    </main>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+</body>
+</html>
